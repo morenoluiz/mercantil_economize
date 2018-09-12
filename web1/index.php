@@ -1,5 +1,5 @@
 <?php 
-include 'controllerUser.php';
+include 'produto/controllerUser.php';
 ?>	
 <!DOCTYPE html>
     <html> 
