@@ -1,5 +1,5 @@
 <?php 
-include 'controler_produto.php';
+include 'produto/controler-produto.php';
 ?>	
 <!DOCTYPE html>
     <html> 
@@ -9,7 +9,7 @@ include 'controler_produto.php';
             <link href="css/bootstrap.min.css" rel="stylesheet" >
 
 
-            <link href="css/meuestilo.css" rel="stylesheet">
+            <link href="web1/css/meuestilo.css" rel="stylesheet">
         </head>
         <body>
             <div class="container">
@@ -55,7 +55,12 @@ include 'controler_produto.php';
 <!-- CAMPO Promação_Id -->
                <div class="form-group">
                         <label for="promocao_id">Promoção_Id</label>
-                        <input type="promocao_id" class="form-control" id="promocao_id" name="promocao_id" aria-describedby="promocao_idHelp" placeholder="Digite o id da promoção">
+                        <select>
+                            <option value="Verduras">Verduras</option>
+                            <option value="Carnes">Carnes</option>
+                            
+                        </select>
+
                         <small id="promocao_idHelp" class="form-text text-muted">Preencha apenas com números.</small>
                 </div>
 
