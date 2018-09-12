@@ -41,6 +41,37 @@ include 'promocao/controler-promocao.php';
 
         <button type="submit" class="btn btn-danger" name="cadastrar" >Cadastrar</button>
     </form>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">descricao</th>
+      <th scope="col">imagem</th>
+      <th scope="col">acao</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td><button type="button" class="btn btn-info">Deletar</button>
+        <button type="button" class="btn btn-info">Editar</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 
    
