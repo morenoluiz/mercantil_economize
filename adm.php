@@ -58,6 +58,8 @@ include 'produto/controler-produto.php';
                         <select>
                             <option value="Verduras">Verduras</option>
                             <option value="Carnes">Carnes</option>
+                            <option value="Bebidas">Bebidas</option>
+                            <option value="Produtos_da_Semana">Produtos_da_Semana</option>
                             
                         </select>
 
