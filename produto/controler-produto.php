@@ -9,7 +9,7 @@ $produto = new produto();
 $produto->setDescricao($_POST['descricao']);
 $produto->setQuantidade($_POST['quantidade']);
 $produto->setPreco($_POST['preco']);
-$produto->setMedida(4_POST['medida']);
+$produto->setMedida($_POST['medida']);
 
 $modelo->adicionar($produto);
 
