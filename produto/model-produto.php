@@ -15,6 +15,7 @@ class ModelProduto {
          $valores[':quantidade'] = $produto->getQuantidade();
          $valores[':preco'] = $produto->getPreco();
          $valores[':medida'] = $produto->getMedida();
+         $valores[':promocao_id'] = $produto->getPromocao_id();
          
          $result = $statement->execute($valores);
 
@@ -35,6 +36,15 @@ class ModelProduto {
         //executar a query
         $result = $statement->execute();
      
+        //junta todos os usuarios retornados em um array de array usuario
+        //pro exemplo o 
+        //$u = $result[0];//pega primeiro usuario
+        //echo $u['first_name'];
+        //$u = $result[1];
+        //echo $u['first_name'];//pega segundo usuario
+        
+        $result = $statement->fetchAll(); 
+        
         return $result;
     }
 
@@ -43,7 +53,7 @@ class ModelProduto {
         include '../bd.php';
         
         
-        $query = "UPDATE produto SET descricao = :descricao, quantidade = :quantidade, preco = :preco, medida = :medida WHERE id = :id";
+        $query = "UPDATE produto SET descricao = :descricao, quantidade = :quantidade, preco = :preco, medida = :medida, promocao_id = :promocao_id WHERE id = :id";
         
         $statement= $connection->prepare($query);
         
@@ -52,6 +62,7 @@ class ModelProduto {
         $valores[':quantidade'] = $produto->getQuantidade();
         $valores[':preco'] = $produto->getPreco();
         $valores[':medida'] = $produto->getMedida();
+        $valores[':promocao_id'] = $produto->getPromocao_id();
         
         $result = $statement->execute($valores);
         
