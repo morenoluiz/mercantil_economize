@@ -55,7 +55,7 @@ include 'produto/controler-produto.php';
 <!-- CAMPO Promação_Id -->
                <div class="form-group">
                         <label for="promocao_id">Promoção_Id</label>
-                        <select>
+                        <select name="promocao_id">
                             <option value="Verduras">Verduras</option>
                             <option value="Carnes">Carnes</option>
                             <option value="Bebidas">Bebidas</option>
