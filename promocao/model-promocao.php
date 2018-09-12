@@ -4,7 +4,7 @@ include'promocao.php';
 class ModelPromocao {
 
      public function adicionar(Promocao $promocao){
-         include '../bd.php';
+         include 'bd.php';
          
          $query = "INSERT INTO promocao (descricao, imagem) VALUES (:descricao :imagem)";
 
@@ -25,7 +25,7 @@ class ModelPromocao {
         }
      }
      public function listar(){
-        include '../bd.php';
+        include 'bd.php';
         
         $query = "SELECT id, descricao, imagem FROM promocao";
         
@@ -39,7 +39,7 @@ class ModelPromocao {
 
     
     public function editar(Promocao $promocao){
-        include '../bd.php';
+        include 'bd.php';
         
         
         $query = "UPDATE promocao SET descricao = :descricao, imagem = :imagem WHERE id = :id";
@@ -61,7 +61,7 @@ class ModelPromocao {
     }
     
     public function remover($id){
-        include '../bd.php';
+        include 'bd.php';
         
         $query = "DELETE FROM promocao WHERE id = :id";
         

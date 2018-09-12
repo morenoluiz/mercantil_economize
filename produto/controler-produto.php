@@ -1,5 +1,6 @@
 <?php 
 include 'model-produto.php';
+include 'promocao/model-promocao.php';
 
 if (isset($_POST['cadastrar'])) {
 
