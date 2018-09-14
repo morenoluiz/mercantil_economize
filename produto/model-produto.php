@@ -6,7 +6,7 @@ class ModelProduto {
      public function adicionar(Produto $produto){
          include 'bd.php';
          
-         $query = "INSERT INTO produto (descricao, quantidade, preco, medida, promocao_id) VALUES (:descricao, :quantidade, :preco, :medida, :promocao_id)";
+         $query = "INSERT INTO produtos (descricao, quantidade, preco, medida, promocao_id) VALUES (:descricao, :quantidade, :preco, :medida, :promocao_id)";
 
          $statement = $connection->prepare($query);
 
@@ -29,7 +29,7 @@ class ModelProduto {
      public function listar(){
         include 'bd.php';
         
-        $query = "SELECT id, descricao, quantidade, preco, medida, promocao_id FROM produto";
+        $query = "SELECT id, descricao, quantidade, preco, medida, promocao_id FROM produtos";
         
         $statement = $connection->prepare($query);
         
@@ -53,7 +53,7 @@ class ModelProduto {
         include 'bd.php';
         
         
-        $query = "UPDATE produto SET descricao = :descricao, quantidade = :quantidade, preco = :preco, medida = :medida, promocao_id = :promocao_id WHERE id = :id";
+        $query = "UPDATE produtos SET descricao = :descricao, quantidade = :quantidade, preco = :preco, medida = :medida, promocao_id = :promocao_id WHERE id = :id";
         
         $statement= $connection->prepare($query);
         
@@ -76,7 +76,7 @@ class ModelProduto {
     public function remover($id){
         include 'bd.php';
         
-        $query = "DELETE FROM produto WHERE id = :id";
+        $query = "DELETE FROM produtos WHERE id = :id";
         
         $statement = $connection->prepare($query);
         
