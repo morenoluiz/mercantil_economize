@@ -12,14 +12,6 @@ include 'promocao/controler-promocao.php';
     <div class="container">
     <form method="POST" action ="">
 
-
-        <!-- CAMPO id --> 
-        <div class="form-group">
-            <label for="id">id:</label>
-            <input type="text" class="form-control" id="id" name="id" aria-describedby="id" placeholder="Digite seu id">
-            <small id="id" class="form-text text-muted">coloque o id.</small>
-        </div>
-
         <!-- CAMPO descricao --> 
         <div class="form-group">
             <label for="descricao">descricao:</label>
@@ -51,29 +43,32 @@ include 'promocao/controler-promocao.php';
     </tr>
   </thead>
   <tbody>
-    <tr>
+   <?php
+  foreach($listadepromocao as $pr){
+    
+      <tr>
       <th scope="row">1</th>
       <td></td>
       <td></td>
       <td><button type="button" class="btn btn-info">Deletar</button>
         <button type="button" class="btn btn-info">Editar</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+        </tr>
+    ?>
+       <?php
+                                }
+                            ?>
+    
   </tbody>
 </table>
 
-
+<?php
+  foreach($listadepromocao as $pr){
+      
+      
+  }      
+        
+        
+        ?>
    
 
     </div>
