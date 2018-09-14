@@ -16,12 +16,6 @@ include 'produto/controler-produto.php';
                 <form method="POST" action ="adm.php">
 
                     
-<!-- CAMPO Id --> 
-                 <div class="form-group">
-                        <label for="id">Id:</label>
-                        <input type="text" class="form-control" id="id" name="id" aria-describedby="IdHelp" placeholder="Digite o Id do produto">
-                        <small id="IdHelp" class="form-text text-muted">Preencha apenas com números.</small>
-                </div>
 <!-- CAMPO Descrição --> 
                 <div class="form-group">
                     <label for="descricao">Descrição:</label>
@@ -49,10 +43,10 @@ include 'produto/controler-produto.php';
                 <div class="form-group">
                         <label for="medida">Medida</label>
                         <input type="medida" class="form-control" id="medida" name="medida" aria-describedby="medidaHelp" placeholder="Digite a medida">
-                        <small id="medidaHelp" class="form-text text-muted">Preencha apenas com números.</small>
+                        <small id="medidaHelp" class="form-text text-muted">Preencha apenas com unidades de medida.</small>
                 </div>
             
-<!-- Laço para repetição referente Promoção_Id-->
+
                 
                              
                     
@@ -60,17 +54,17 @@ include 'produto/controler-produto.php';
                <div class="form-group">
                         <label for="promocao_id">Promoção:</label>
                         <select name="promocao_id">
+                            
+<!-- Laço para repetição referente Promoção_Id--> 
                             <?php
-                                foreach ($listadepromocoes as  $p){?>
-                           
-                                    <option value="<?php echo $p['id']; ?>"><?php echo $p['descricao']; ?></option>
+                                foreach ($listadepromocoes as  $p){
+                            ?>
+                         <option value="<?php echo $p['id']; ?>"><?php echo $p['descricao']; ?></option>
+                            
                             <?php
                                 }
-                            ?>
-                            
+                            ?> 
                         </select>
-
-                        <small id="promocao_idHelp" class="form-text text-muted">Preencha apenas com números.</small>
                 </div>
 
 
