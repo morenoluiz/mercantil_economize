@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Set-2018 às 18:57
+-- Generation Time: 14-Set-2018 às 19:27
 -- Versão do servidor: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -33,7 +33,7 @@ CREATE TABLE `produtos` (
   `descricao` varchar(200) NOT NULL,
   `quantidade` int(255) NOT NULL,
   `preco` double NOT NULL,
-  `medida` int(11) NOT NULL,
+  `medida` varchar(11) NOT NULL,
   `promocao_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -67,6 +67,22 @@ ALTER TABLE `promocao`
   ADD PRIMARY KEY (`id`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `produtos`
+--
+ALTER TABLE `produtos`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `promocao`
+--
+ALTER TABLE `promocao`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -74,7 +90,7 @@ ALTER TABLE `promocao`
 -- Limitadores para a tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD CONSTRAINT `forege_key` FOREIGN KEY (`promocao_id`) REFERENCES `promocao` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `foreing_key` FOREIGN KEY (`promocao_id`) REFERENCES `promocao` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

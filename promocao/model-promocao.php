@@ -6,7 +6,7 @@ class ModelPromocao {
      public function adicionar(Promocao $promocao){
          include 'bd.php';
          
-         $query = "INSERT INTO promocao (descricao, imagem) VALUES (:descricao :imagem)";
+         $query = "INSERT INTO promocao (descricao, imagem) VALUES (:descricao, :imagem)";
 
          $statement = $connection->prepare($query);
 
@@ -33,7 +33,7 @@ class ModelPromocao {
         
         //executar a query
         $result = $statement->execute();
-     
+        $result = $statement->fetchAll(); 
         return $result;
     }
 

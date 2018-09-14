@@ -10,7 +10,7 @@ include 'promocao/controler-promocao.php';
 </head>
 <body>
     <div class="container">
-    <form method="POST" action ="index.php">
+    <form method="POST" action ="">
 
 
         <!-- CAMPO id --> 

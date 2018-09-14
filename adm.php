@@ -51,15 +51,22 @@ include 'produto/controler-produto.php';
                         <input type="medida" class="form-control" id="medida" name="medida" aria-describedby="medidaHelp" placeholder="Digite a medida">
                         <small id="medidaHelp" class="form-text text-muted">Preencha apenas com números.</small>
                 </div>
+            
+<!-- Laço para repetição referente Promoção_Id-->
+                
+                             
                     
 <!-- CAMPO Promação_Id -->
                <div class="form-group">
-                        <label for="promocao_id">Promoção_Id</label>
+                        <label for="promocao_id">Promoção:</label>
                         <select name="promocao_id">
-                            <option value="Verduras">Verduras</option>
-                            <option value="Carnes">Carnes</option>
-                            <option value="Bebidas">Bebidas</option>
-                            <option value="Produtos_da_Semana">Produtos_da_Semana</option>
+                            <?php
+                                foreach ($listadepromocoes as  $p){?>
+                           
+                                    <option value="<?php echo $p['id']; ?>"><?php echo $p['descricao']; ?></option>
+                            <?php
+                                }
+                            ?>
                             
                         </select>
 
