@@ -67,7 +67,7 @@ include 'promocao/controler-promocao.php';
         <td><img  class ="style_img" src="img/<?php echo $pr['imagem'];?>"> </td>
         
           <td><a href="?id=2" class="btn btn-info">Deletar</a>
-            <a  class="btn btn-info">Editar</a>
+            <a href="?id=2" class="btn btn-info">Editar</a>
         </td>
     </tr>   
 <?php
