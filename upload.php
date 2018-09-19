@@ -1,17 +1,5 @@
-<?php 
-include 'model-promocao.php';
-
-echo $_GET['id'];
-
-if (isset($_POST['cadastrar'])) {
-
-    $modelo = new ModelPromocao();
-
-    $promocao = new Promocao();
-    $promocao->setDescricao($_POST['descricao']);
-    
-    
-    //Verifica se aconteceu falha no upload
+<?php
+	//Verifica se aconteceu falha no upload
 	if($_FILES['file']['error'] > 0) { echo 'Error during uploading, try again'; }
 	
 	//We won't use $_FILES['file']['type'] to check the file extension for security purpose
@@ -35,47 +23,31 @@ if (isset($_POST['cadastrar'])) {
         $result = move_uploaded_file($_FILES['file']['tmp_name'], $onde_salvar);
 
         //mostra a imagem na tag img
-        if($result){echo " <img src='$onde_salvar'/>";}
+        if($result){echo "meu nome: ".$_POST['meunome']." <img src='$onde_salvar'/>";}
 
 	} else { echo 'Arquivo invpalido, tente novamente com as extensões permitidas'; }
-    
-    
-    
-    
-    $promocao->setImagem($nome_imagem);
-
-    $modelo->adicionar($promocao);
-
-}
-
-if (isset($_POST['editar'])) {
-
-    $modelo = new ModelPromocao();
-
-    $promocao = new Promocao();
-    $promocao->setId($_POST['id']);
-    $promocao->setDescricao($_POST['descricao']);
-    $promocao->setImagem("2.jpg");
-
-    $modelo->editar($promocao);
-
-}
-
-if (isset($_POST['remover'])) {
-
-    $modelo = new ModelPromocao();
-
-    $promocao = new Promocao();
-    $promocao->setId($_POST['id']);
-
-    $modelo->remover($promocao);
-
-}
-//listar
-
-    $modelo = new ModelPromocao();
-    $listadepromocao = $modelo->listar();
-
-var_dump($_POST);
-
+	
 ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Single Upload Form with PHP</title>
+  </head>
+  <body>
+  
+	<form method="POST" action="upload.php" enctype="multipart/form-data">
+		<label>Nome:</label>
+        <input type="text" name="meunome">
+        
+        <label for="file"> Pick a file :  </label>
+		<input type="file" name ="file"> 
+		<input type="submit" value = "Upload">
+	</form>
+  
+      
+  
+    
+  </body>
+</html>

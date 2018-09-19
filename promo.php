@@ -10,25 +10,25 @@ include 'promocao/controler-promocao.php';
 </head>
 <body>
     <div class="container">
-    <form method="POST" action ="">
+    <form method="POST" action ="" enctype="multipart/form-data">
 
         <!-- CAMPO descricao --> 
         <div class="form-group">
             <label for="descricao">descricao:</label>
             <input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="digite a descricao do produto">
-            <small id="descricao" class="form-text text-muted">preencha apenas com descricao.</small>
+            <small id="descricao" class="form-text text-muted">preencha apenas com descrição.</small>
         </div>
 
         <!-- CAMPO imagem --> 
         <div class="form-group">
             <label for="imagem">imagem</label>
-            <input type="imagem" class="form-control" id="" name="imagem" aria-describedby="imagem" placeholder="imagem">
+            <input type="file" class="form-control" aria-describedby="imagem"  name ="file"> 
             <small id="imagem" class="form-text text-muted">Não compartilhe imagem com ninguém.</small>
         </div>
 
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">nao sou um robô</label>
+            <label class="form-check-label" for="exampleCheck1">Não sou um robô</label>
         </div>
 
         <button type="submit" class="btn btn-danger" name="cadastrar" >Cadastrar</button>
@@ -36,10 +36,10 @@ include 'promocao/controler-promocao.php';
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">descricao</th>
-      <th scope="col">imagem</th>
-      <th scope="col">acao</th>
+      <th scope="col">Id</th>
+      <th scope="col">Descricao</th>
+      <th scope="col">Imagem</th>
+      <th scope="col">Ação</th>
     </tr>
   </thead>
   <tbody>
@@ -57,10 +57,10 @@ include 'promocao/controler-promocao.php';
           
         <td><?php echo $pr['descricao'];?></td>
           
-        <td><?php echo $pr['imagem'];?></td>
+        <td><img  src="img/<?php echo $pr['imagem'];?>"> </td>
         
-          <td><button type="button" class="btn btn-info">Deletar</button>
-            <button type="button" class="btn btn-info">Editar</button>
+          <td><a href="?id=2" class="btn btn-info">Deletar</a>
+            <a  class="btn btn-info">Editar</a>
         </td>
     </tr>   
 <?php
