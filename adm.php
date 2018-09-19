@@ -14,7 +14,8 @@ include 'produto/controler-produto.php';
         <body>
             <div class="container">
                 <form method="POST" action ="adm.php">
-
+                    
+                    <h1 style="text-alingn: center; color: red"> Cadastro de produtos</h1>
                     
 <!-- CAMPO Descrição --> 
                 <div class="form-group">
