@@ -57,12 +57,12 @@ if (isset($_POST['editar'])) {
 
 }
 
-if (isset($_POST['remover'])) {
+if (isset($_GET['remover'])) {
 
     $modelo = new ModelPromocao();
 
     $promocao = new Promocao();
-    $promocao->setId($_POST['id']);
+    $promocao->setId($_GET['id']);
 
     $modelo->remover($promocao);
 
