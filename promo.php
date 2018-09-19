@@ -43,32 +43,33 @@ include 'promocao/controler-promocao.php';
     </tr>
   </thead>
   <tbody>
-   <?php
-  foreach($listadepromocao as $pr){
-    
-      <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td><button type="button" class="btn btn-info">Deletar</button>
-        <button type="button" class="btn btn-info">Editar</button></td>
-        </tr>
-    ?>
-       <?php
-                                }
-                            ?>
-    
+   
+    <?php
+  foreach($listadepromocao as $pr){//$pr
+      
+      
+  ?>
+      
+    <tr>
+        <th scope="row">
+            <?php echo  $pr['id']; ?>
+        </th>
+          
+        <td><?php echo $pr['descricao'];?></td>
+          
+        <td><?php echo $pr['imagem'];?></td>
+        
+          <td><button type="button" class="btn btn-info">Deletar</button>
+            <button type="button" class="btn btn-info">Editar</button>
+        </td>
+    </tr>   
+<?php
+      }
+      ?>
   </tbody>
 </table>
 
-<?php
-  foreach($listadepromocao as $pr){
-      
-      
-  }      
-        
-        
-        ?>
+
    
 
     </div>
