@@ -1,7 +1,7 @@
 <?php
 
-$username = 'root';
-$password = '';
+$username ='root';
+$password ='';
 $connection = new PDO( 'mysql:host=localhost;dbname=mercantil_economize', $username, $password );
 
 ?>
