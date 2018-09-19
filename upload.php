@@ -43,6 +43,8 @@
         
         <label for="file"> Pick a file :  </label>
 		<input type="file" name ="file"> 
+        
+        
 		<input type="submit" value = "Upload">
 	</form>
   

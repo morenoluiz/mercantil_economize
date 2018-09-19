@@ -2,7 +2,6 @@
 include 'model-promocao.php';
 
 echo $_GET['id'];
-
 if (isset($_POST['cadastrar'])) {
 
     $modelo = new ModelPromocao();
@@ -38,10 +37,7 @@ if (isset($_POST['cadastrar'])) {
         if($result){echo " <img src='$onde_salvar'/>";}
 
 	} else { echo 'Arquivo invpalido, tente novamente com as extensões permitidas'; }
-    
-    
-    
-    
+     
     $promocao->setImagem($nome_imagem);
 
     $modelo->adicionar($promocao);
