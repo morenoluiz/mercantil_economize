@@ -10,8 +10,8 @@ include 'promocao/controler-promocao.php';
     <style>
     
         .style_img{
-        width: 10px;
-        height:10px;
+        width: 50px;
+        height:40px;
     }
     </style>
 </head>
