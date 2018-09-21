@@ -1,7 +1,17 @@
 <?php 
 include 'model-promocao.php';
 
+
+$quer_editar = 0;
+if (isset($_GET['editar'])){
+    $quer_editar = 1;
+} 
+
+
 echo $_GET['id'];
+var_dump($_GET);
+
+
 if (isset($_POST['cadastrar'])) {
 
     $modelo = new ModelPromocao();
@@ -61,10 +71,8 @@ if (isset($_GET['remover'])) {
 
     $modelo = new ModelPromocao();
 
-    $promocao = new Promocao();
-    $promocao->setId($_GET['id']);
 
-    $modelo->remover($promocao);
+    $modelo->remover($_GET['id']);
 
 }
 //listar

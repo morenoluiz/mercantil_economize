@@ -17,29 +17,68 @@ include 'promocao/controler-promocao.php';
 </head>
 <body>
     <div class="container">
-    <form method="POST" action ="" enctype="multipart/form-data">
+        
+    <?php if(   $quer_editar == 0){
+        
+        ?>
+            <form method="POST" action ="" enctype="multipart/form-data">
 
-        <!-- CAMPO descricao --> 
-        <div class="form-group">
-            <label for="descricao">descricao:</label>
-            <input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="digite a descricao do produto">
-            <small id="descricao" class="form-text text-muted">preencha apenas com descrição.</small>
-        </div>
+                <!-- CAMPO descricao --> 
+                <div class="form-group">
+                    <label for="descricao">descricao:</label>
+                    <input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="digite a descricao do produto">
+                    <small id="descricao" class="form-text text-muted">preencha apenas com descrição.</small>
+                </div>
 
-        <!-- CAMPO imagem --> 
-        <div class="form-group">
-            <label for="imagem">imagem</label>
-            <input type="file" class="form-control" aria-describedby="imagem"  name ="file"> 
-            <small id="imagem" class="form-text text-muted">Não compartilhe imagem com ninguém.</small>
-        </div>
+                <!-- CAMPO imagem --> 
+                <div class="form-group">
+                    <label for="imagem">imagem</label>
+                    <input type="file" class="form-control" aria-describedby="imagem"  name ="file"> 
+                    <small id="imagem" class="form-text text-muted">Não compartilhe imagem com ninguém.</small>
+                </div>
 
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Não sou um robô</label>
-        </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Não sou um robô</label>
+                </div>
 
-        <button type="submit" class="btn btn-danger" name="cadastrar" >Cadastrar</button>
-    </form>
+                <button type="submit" class="btn btn-danger" name="cadastrar" >Cadastrar</button>
+            </form>
+        
+         <?php  } else if ( $quer_editar ==  1){
+    
+        ?>
+         <form method="POST" action ="" enctype="multipart/form-data">
+
+              <!-- CAMPO descricao --> 
+                <div class="form-group">
+                    <label for="id">id:</label>
+                    <input type="text" class="form-control" id="id" name="id" aria-describedby="id" placeholder="digite o id do produto">
+                    <small id="id" class="form-text text-muted">preencha apenas com numero.</small>
+                </div>
+                <!-- CAMPO descricao --> 
+                <div class="form-group">
+                    <label for="descricao">descricao:</label>
+                    <input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="digite a descricao do produto">
+                    <small id="descricao" class="form-text text-muted">preencha apenas com descrição.</small>
+                </div>
+
+                <!-- CAMPO imagem --> 
+                <div class="form-group">
+                    <label for="imagem">imagem</label>
+                    <input type="file" class="form-control" aria-describedby="imagem"  name ="file"> 
+                    <small id="imagem" class="form-text text-muted">Não compartilhe imagem com ninguém.</small>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Não sou um robô</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" name="editar" >Salvar Alterações</button>
+            </form>
+        <?php } ?>
+        
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -66,8 +105,8 @@ include 'promocao/controler-promocao.php';
           
         <td><img  class ="style_img" src="img/<?php echo $pr['imagem'];?>"> </td>
         
-          <td><a href="?id=2" class="btn btn-info">Deletar</a>
-            <a href="?id=2" class="btn btn-info">Editar</a>
+          <td><a href="?id=<?php echo  $pr['id']; ?>&remover" class="btn btn-info">Deletar</a>
+            <a href="?id=<?php echo  $pr['id']; ?>&editar" class="btn btn-info">Editar</a>
         </td>
     </tr>   
 <?php
