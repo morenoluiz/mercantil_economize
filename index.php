@@ -1,3 +1,6 @@
+<?php 
+include 'controler-index.php';
+?>	
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -123,21 +126,40 @@
 				</div>
 			</div>
 			<div class="row bg-light">
-				<div class="col-md-4" data-aos="slide-up">
-					<div class="card view zoom">
-  						<img class="card-img-top img-fluid " src="images/1473950811858-carnes.jpg">
-					  	<div class="card-body">
-					  		<h5 class="card-title">~ Promoção de carnes Quarta e Quinta ~</h5>
-					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Costelinha 19,90Kg </li>
-							    <li class="list-group-item">Coxa ou Sobrecoxa 21,90Kg</li>
-							 	<li class="list-group-item">Mão De Vaca 25,00Kg</li>
-							 	<li class="list-group-item">Carne Moida 10,59KG</li>
-							 	<li class="list-group-item">File De Frango 9,00Kg</li>
-							</ul>
-					  	</div>
-					</div>
-				</div>
+				
+                
+                
+                <?php foreach($listadepromocao as $pr) { ?>
+                    <div class="col-md-4" data-aos="slide-up">
+                        <div class="card view zoom">
+                            <img class="card-img-top img-fluid " src="img/<?php echo $pr['imagem']; ?>">
+                            <div class="card-body">
+                                <h5 class="card-title">~ <?php echo $pr['descricao']; ?> ~</h5>
+                                <ul class="list-group list-group-flush">
+                                    
+                                    <?php 
+                                        $listadeprodutos = $pr['produtos']; 
+                                                       
+                                        foreach($listadeprodutos as $produto) { ?>
+
+                                            <li class="list-group-item"><?php echo $produto['descricao'].' '.$produto['preco'].' '.$produto['medida']; ?> </li>
+    <!--
+                                            <li class="list-group-item">Coxa ou Sobrecoxa 21,90Kg</li>
+                                            <li class="list-group-item">Mão De Vaca 25,00Kg</li>
+                                            <li class="list-group-item">Carne Moida 10,59KG</li>
+                                            <li class="list-group-item">File De Frango 9,00Kg</li>
+    -->
+                                    <?php } ?>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php } ?>
+                
+<!--
+                
 				<div class="col-md-4" data-aos="slide-up">
 					<div class="card">
   						<img class="card-img-top img-fluid " src="images/ee466074deeb4bfc80faf56ac253e6aa.jpg">
@@ -185,6 +207,7 @@
 					  	</div>
 					</div>
 				</div>
+-->
 			<!--- End of Menu -->
 			<!--- Start of Reservation-->
 			

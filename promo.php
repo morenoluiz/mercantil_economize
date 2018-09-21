@@ -25,16 +25,16 @@ include 'promocao/controler-promocao.php';
 
                 <!-- CAMPO descricao --> 
                 <div class="form-group">
-                    <label for="descricao">descricao:</label>
+                    <label for="descricao">Descrição:</label>
                     <input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="digite a descricao do produto">
-                    <small id="descricao" class="form-text text-muted">preencha apenas com descrição.</small>
+                    <small id="descricao" class="form-text text-muted">Preencha apenas com descrição.</small>
                 </div>
 
                 <!-- CAMPO imagem --> 
                 <div class="form-group">
-                    <label for="imagem">imagem</label>
+                    <label for="imagem">Imagem</label>
                     <input type="file" class="form-control" aria-describedby="imagem"  name ="file"> 
-                    <small id="imagem" class="form-text text-muted">Não compartilhe imagem com ninguém.</small>
+                    <small id="imagem" class="form-text text-muted">Apenas imagem de promoção.</small>
                 </div>
 
                 <div class="form-group form-check">
@@ -52,13 +52,13 @@ include 'promocao/controler-promocao.php';
 
               <!-- CAMPO descricao --> 
                 <div class="form-group">
-                    <label for="id">id:</label>
+                    <label for="id">Id:</label>
                     <input type="text" class="form-control" id="id" name="id" aria-describedby="id" placeholder="digite o id do produto">
                     <small id="id" class="form-text text-muted">preencha apenas com numero.</small>
                 </div>
                 <!-- CAMPO descricao --> 
                 <div class="form-group">
-                    <label for="descricao">descricao:</label>
+                    <label for="descricao">Descrição:</label>
                     <input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="digite a descricao do produto">
                     <small id="descricao" class="form-text text-muted">preencha apenas com descrição.</small>
                 </div>
@@ -67,7 +67,7 @@ include 'promocao/controler-promocao.php';
                 <div class="form-group">
                     <label for="imagem">imagem</label>
                     <input type="file" class="form-control" aria-describedby="imagem"  name ="file"> 
-                    <small id="imagem" class="form-text text-muted">Não compartilhe imagem com ninguém.</small>
+                    <small id="imagem" class="form-text text-muted">Apenas imagem de promoção.</small>
                 </div>
 
                 <div class="form-group form-check">

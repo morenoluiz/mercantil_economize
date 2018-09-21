@@ -1,24 +1,7 @@
 <?php 
 include 'model-promocao.php';
 
-
-$quer_editar = 0;
-if (isset($_GET['editar'])){
-    $quer_editar = 1;
-} 
-
-
-echo $_GET['id'];
-var_dump($_GET);
-
-
-if (isset($_POST['cadastrar'])) {
-
-    $modelo = new ModelPromocao();
-
-    $promocao = new Promocao();
-    $promocao->setDescricao($_POST['descricao']);
-    
+function uploadImagem(){
     
     //Verifica se aconteceu falha no upload
 	if($_FILES['file']['error'] > 0) { echo 'Error during uploading, try again'; }
@@ -48,7 +31,27 @@ if (isset($_POST['cadastrar'])) {
 
 	} else { echo 'Arquivo invpalido, tente novamente com as extensões permitidas'; }
      
-    $promocao->setImagem($nome_imagem);
+    return $nome_imagem ;
+}
+$quer_editar = 0;
+if (isset($_GET['editar'])){
+    $quer_editar = 1;
+} 
+
+
+echo $_GET['id'];
+var_dump($_GET);
+
+
+if (isset($_POST['cadastrar'])) {
+
+    $modelo = new ModelPromocao();
+
+    $promocao = new Promocao();
+    $promocao->setDescricao($_POST['descricao']);
+    
+    
+    $promocao->setImagem(uploadImagem());
 
     $modelo->adicionar($promocao);
 
@@ -61,7 +64,7 @@ if (isset($_POST['editar'])) {
     $promocao = new Promocao();
     $promocao->setId($_POST['id']);
     $promocao->setDescricao($_POST['descricao']);
-    $promocao->setImagem("2.jpg");
+    $promocao->setImagem(uploadImagem());
 
     $modelo->editar($promocao);
 
@@ -81,5 +84,6 @@ if (isset($_GET['remover'])) {
     $listadepromocao = $modelo->listar();
 
 var_dump($_POST);
+
 
 ?>

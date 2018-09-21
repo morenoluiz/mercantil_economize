@@ -48,6 +48,30 @@ class ModelProduto {
         return $result;
     }
 
+     public function listarProdutosPorPromocao($id_promocao){
+        include 'bd.php';
+        
+        $query = "SELECT id, descricao, quantidade, preco, medida, promocao_id FROM produtos WHERE promocao_id = :promocao_id";
+        
+        $statement = $connection->prepare($query);
+        
+         $valores = array();
+         $valores[':promocao_id'] =$id_promocao ;
+         
+        //executar a query
+        $result = $statement->execute($valores);
+     
+        //junta todos os usuarios retornados em um array de array usuario
+        //pro exemplo o 
+        //$u = $result[0];//pega primeiro usuario
+        //echo $u['first_name'];
+        //$u = $result[1];
+        //echo $u['first_name'];//pega segundo usuario
+        
+        $result = $statement->fetchAll(); 
+        
+        return $result;
+    }
     
     public function editar(Produto $produto){
         include 'bd.php';
