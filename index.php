@@ -142,7 +142,7 @@ include 'controler-index.php';
                                                        
                                         foreach($listadeprodutos as $produto) { ?>
 
-                                            <li class="list-group-item"><?php echo $produto['descricao'].' '.$produto['preco'].' '.$produto['medida']; ?> </li>
+                                            <li class="list-group-item"><?php echo $produto['descricao'].' '.' R$ '. $produto['preco'].' '.$produto['medida']; ?> </li>
     <!--
                                             <li class="list-group-item">Coxa ou Sobrecoxa 21,90Kg</li>
                                             <li class="list-group-item">Mão De Vaca 25,00Kg</li>
