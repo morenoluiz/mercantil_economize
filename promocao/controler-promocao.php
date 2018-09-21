@@ -44,7 +44,7 @@ if (isset($_POST['cadastrar'])) {
         $result = move_uploaded_file($_FILES['file']['tmp_name'], $onde_salvar);
 
         //mostra a imagem na tag img
-        if($result){echo " <img src='$onde_salvar'/>";}
+       // if($result){echo " <img src='$onde_salvar'/>";}
 
 	} else { echo 'Arquivo invpalido, tente novamente com as extensões permitidas'; }
      

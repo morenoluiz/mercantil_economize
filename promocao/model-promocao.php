@@ -17,12 +17,12 @@ class ModelPromocao {
 
          $result = $statement->execute($valores);
 
-         if(  empty($result) ){
-                print "<br>Nao inseriu promoção.";
-                print_r( $statement->errorInfo());
-         }else{
-                print "<br>Deu certo inserir promoção.";
-        }
+         //if(  empty($result) ){
+               // print "<br>Nao inseriu promoção.";
+              //  print_r( $statement->errorInfo());
+        // }else{
+              //  print "<br>Deu certo inserir promoção.";
+       // }
      }
      public function listar(){
         include 'bd.php';
